@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --padding: 8px 16px;
+            --border-size: 2px;
+            --border: var(--border-size) solid black;
+            --border-radius: 2px;
+            --bg-color: #F4F3EB;
+            --fg-color: #D06234;
+            --shadow-color: #6ABFCE;
+            --transition: transform .15s ease;
+        }
+
+        .shadow {
+            background-color: var(--shadow-color);
+            border-radius: var(--border-radius);
+            padding: 0;
+            border: none;
+            box-shadow:
+                inset 0 0 0 var(--border-size) black;
+            transition: var(--transition);
+        }
+
+        .content-container {
+            display: block;
+            transform: translate(-4px, -4px);
+            background-color: var(--bg-color);
+            padding: var(--padding);
+            border: var(--border);
+            border-radius: var(--border-radius);
+            font-size: 12px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .big-text {
+            display: inline-block;
+            margin-right: 2px;
+            transform: translateY(4px);
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .mini-text {
+            display: inline-block;
+            margin-right: 2px;
+            font-weight: 600;
+        }
+
+        div:hover .shadow {
+            transform: translateY(-1px);
+        }
+
+        div:hover .content-container {
+            transform: translate(-3px, -2px);
+        }
+
+        div:active .shadow {
+            transform: translate(-1px, -1px);
+        }
+
+        div:active .content-container {
+            transform: translate(-1px, -1px);
+        }
+
+        span {
+            color: var(--fg-color);
+        }
+
+        div:active span {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button class="shadow">
+            <span class="content-container"><span class="big-text">json formatter</span> <span
+                    class="mini-text">live</span></span>
+        </button>
+    </div>
+
+</body>
+
+</html>
